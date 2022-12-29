@@ -35,41 +35,7 @@ impl EguiSample {
 impl eframe::App for EguiSample {
     fn save(&mut self, _storage: &mut dyn eframe::Storage) {}       
     fn update(&mut self, ctx: &Context, _frame: &mut eframe::Frame) {
-        CentralPanel::default().show(ctx, |ui| {
-            ui.painter().vline(
-                200.0,                                        // x
-                std::ops::RangeInclusive::new(100.0, 300.0),  // y
-                Stroke {width:3.0, color:Color32::RED},       // width, color
-            );
-
-            ui.painter().rect_filled(
-                Rect { min: Pos2 {x:50.0, y:50.0}, 
-                       max: Pos2 {x:150.0,y:150.0},},   // location
-                8.0,                                    // curve
-                Color32::from_rgb(199,21,133),          // color
-            );
-
-            ui.painter().circle_filled(
-                Pos2 {x:300.0, y:300.0},  // location
-                50.0,                     // radius
-                Color32::GREEN,           // color
-            );
-
-            ui.painter().text(
-                Pos2 {x:100.0, y:300.0},
-                Align2::CENTER_CENTER,
-                "Hello,",
-                FontId::new(36.0, FontFamily::Proportional),
-                Color32::WHITE
-            );
-            ui.painter().text(
-                Pos2 {x:300.0, y:100.0},
-                Align2::CENTER_CENTER,
-                "World!",
-                FontId::new(24.0, FontFamily::Monospace),
-                Color32::BLUE
-            );
-        });
+        CentralPanel::default().show(ctx, |ui| {});
     }
 }
 
