@@ -71,7 +71,10 @@ impl EguiSample {
     fn input_letter(&mut self, letters: Vec<&String>) {
         if self.input_locate <= Self::CURSOR_MAX_LOCATE {
             println!("Letters:{:?}",letters);
-            letters.iter().for_each(|ltr| {self.input_text.push_str(ltr);self.input_locate+=1;});    
+            letters.iter().for_each(|ltr| {
+                self.input_text.insert_str(self.input_locate,ltr);
+                self.input_locate+=1;
+            });
         }
     }
     fn update_input_text(&mut self, ui: &mut egui::Ui) {
